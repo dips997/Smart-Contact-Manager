@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org"
+ th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+</head>
+<body>
+	<section>
+	
+	<div class="card mr-3 ml-3">
+		<div class="card-body">
+			<div class="container text-center">
+				<img src="" style="width:200px;height:200px;" class="my_profile_image" th:src="@{/img/mouse.png}" alt="my_pic" />
+				<h1 class="text-center" th:text="${user.name}"></h1>
+			<div class="table-responsive">	
+				<table class="table mt-4">
+							  <thead>
+							    <tr>
+							      <th scope="col">#USERID</th>
+							      <th scope="col">SCM<span th:text="${user.id}"></span></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							  <tr>
+							      <th scope="row">Name</th>
+							      <td th:text="${user.name}"></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">Email</th>
+							      <td th:text="${user.email}"></td>
+							    </tr>
+							   	<tr>
+							      <th scope="row">Role</th>
+							      <td th:text="${user.role}"></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">Account Activate</th>
+							      <td th:text="${user.enabled}"></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">about</th>
+							      <td th:text="${user.about}"></td>
+							    </tr>
+							  </tbody>
+				</table>
+			</div>	
+				<!-- <div class="container">
+						<form class="mt-2">
+					      		<button class="btn btn-primary">Update</button>
+					    </form>
+				</div> -->
+			   </div>
+			</div>
+	   </div>
+	   <script>
+		   $(document).ready(()=>{
+			   $(".items").removeClass("active");
+			   $("#profile-link").addClass("active");
+		   });
+	   	
+	   </script>			
+    </section>	
+</body>
+</html>
